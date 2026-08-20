@@ -1,0 +1,275 @@
+/* ===========================
+      BLOOM AI ASSISTANT
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8f4ff;
+}
+
+.ai-page{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ===========================
+      SIDEBAR
+=========================== */
+
+.sidebar{
+    width:250px;
+    background:#fff;
+    padding:30px 20px;
+    box-shadow:0 0 20px rgba(0,0,0,.08);
+}
+
+.sidebar h2{
+    color:#ff4da6;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:15px;
+    margin-bottom:12px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.sidebar li:hover{
+    background:#ffe4f2;
+}
+
+.sidebar li i{
+    margin-right:10px;
+}
+
+.active{
+    background:linear-gradient(90deg,#ff66b2,#b86cff);
+    color:white;
+}
+
+/* ===========================
+      MAIN
+=========================== */
+
+.ai-content{
+    flex:1;
+    padding:40px;
+}
+
+.ai-content h1{
+    font-size:42px;
+    color:#333;
+}
+
+.ai-content p{
+    color:#666;
+    margin:15px 0 30px;
+}
+
+/* ===========================
+      QUICK BUTTONS
+=========================== */
+
+.quick-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.quick-buttons button{
+    padding:12px 20px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+    font-size:15px;
+}
+
+.quick-buttons button:hover{
+    background:#ff4da6;
+    color:white;
+}
+
+/* ===========================
+      ASSISTANT PANEL
+=========================== */
+
+.assistant-panel{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.panel-card{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.panel-card h3{
+    margin-bottom:8px;
+    color:#333;
+}
+
+.panel-card p{
+    margin:0 0 12px;
+    color:#666;
+    font-size:14px;
+}
+
+.mock-form{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.mock-form input{
+    flex:1;
+    min-width:180px;
+    padding:12px 14px;
+    border-radius:12px;
+    border:1px solid #ddd;
+}
+
+.mock-form button{
+    padding:12px 16px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#ff66b2,#b86cff);
+    color:white;
+    cursor:pointer;
+}
+
+.quiz-card{
+    background:#fff5fb;
+    border:1px solid #f2cce1;
+    padding:15px;
+    border-radius:14px;
+    margin-bottom:14px;
+}
+
+.quiz-card strong{
+    display:block;
+    margin-bottom:8px;
+}
+
+.quiz-card ul{
+    padding-left:18px;
+    color:#555;
+}
+
+/* ===========================
+      CHAT BOX
+=========================== */
+
+.chat-box{
+    height:500px;
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    overflow-y:auto;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* AI Message */
+
+.ai-message{
+    background:#f4f0ff;
+    padding:18px;
+    border-radius:18px;
+    width:fit-content;
+    max-width:70%;
+    margin-bottom:20px;
+    line-height:1.6;
+}
+
+/* User Message */
+
+.user-message{
+    background:linear-gradient(90deg,#ff66b2,#b86cff);
+    color:white;
+    padding:18px;
+    border-radius:18px;
+    width:fit-content;
+    max-width:70%;
+    margin-left:auto;
+    margin-bottom:20px;
+    line-height:1.6;
+}
+
+/* ===========================
+      INPUT
+=========================== */
+
+.input-area{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.input-area input{
+    flex:1;
+    padding:18px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    font-size:16px;
+}
+
+.input-area button{
+    width:70px;
+    border:none;
+    border-radius:15px;
+    background:#ff4da6;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.input-area button:hover{
+    background:#e63b8d;
+}
+
+/* ===========================
+      RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.ai-page{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:100%;
+}
+
+.chat-box{
+    height:400px;
+}
+
+.quick-buttons{
+    justify-content:center;
+}
+
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bloom AI | Study</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/study.css">
+
+</head>
+
+<body>
+
+<div class="study-page">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>🌸 Bloom AI</h2>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+                <i class="fas fa-home"></i>
+                Dashboard
+            </li>
+
+            <li class="active">
+                <i class="fas fa-book"></i>
+                Study
+            </li>
+
+            <li onclick="location.href='fitness.html'">
+                <i class="fas fa-dumbbell"></i>
+                Fitness
+            </li>
+
+            <li onclick="location.href='journal.html'">
+                <i class="fas fa-book-open"></i>
+                Journal
+            </li>
+
+            <li onclick="location.href='analytics.html'">
+                <i class="fas fa-chart-line"></i>
+                Analytics
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="study-content">
+
+        <h1>📚 Study Planner</h1>
+
+        <p>Organize your study smarter.</p>
+
+        <!-- Study Form -->
+
+        <div class="study-form">
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Subject Name">
+
+            <input
+                type="text"
+                id="unit"
+                placeholder="Unit Name">
+
+            <input
+                type="text"
+                id="topic"
+                placeholder="Topic Name">
+
+            <select id="priority">
+
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+
+            </select>
+
+            <input
+                type="date"
+                id="deadline">
+
+            <button id="addTask">
+
+                Add Task
+
+            </button>
+
+        </div>
+
+        <!-- Study Progress -->
+
+        <div class="progress-section">
+
+            <h2>📊 Study Progress</h2>
+
+            <div class="progress-bar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+            <p>
+
+                Completed
+
+                <span id="completedCount">0</span>
+
+                /
+
+                <span id="totalCount">0</span>
+
+                Tasks
+
+            </p>
+
+        </div>
+
+        <!-- Search + Filter -->
+
+        <div class="top-controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search Subject">
+
+            <select id="filterStatus">
+
+                <option value="all">All Tasks</option>
+
+                <option value="pending">Pending</option>
+
+                <option value="completed">Completed</option>
+
+            </select>
+
+            <select id="sortDeadline">
+
+                <option value="default">Sort by Deadline</option>
+
+                <option value="ascending">Nearest First</option>
+
+                <option value="descending">Latest First</option>
+
+            </select>
+
+        </div>
+
+        <!-- Task List -->
+
+        <div
+            id="taskList"
+            class="task-list">
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/study.js"></script>
+
+</body>
+
+</html>

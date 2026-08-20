@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bloom AI - Journal</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/journal.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ===========================
+            SIDEBAR
+    ============================ -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>🌸 Bloom AI</h2>
+
+            <p>Student Productivity</p>
+
+        </div>
+
+        <div class="user-card">
+
+            <div class="avatar">
+
+                <i class="fas fa-user"></i>
+
+            </div>
+
+            <h3 id="userName">
+
+                Student
+
+            </h3>
+
+            <p id="userEmail">
+
+                student@email.com
+
+            </p>
+
+        </div>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+
+                <i class="fas fa-house"></i>
+
+                Dashboard
+
+            </li>
+
+            <li onclick="location.href='study.html'">
+
+                <i class="fas fa-book"></i>
+
+                Study Planner
+
+            </li>
+
+            <li onclick="location.href='fitness.html'">
+
+                <i class="fas fa-dumbbell"></i>
+
+                Fitness
+
+            </li>
+
+            <li class="active">
+
+                <i class="fas fa-book-open"></i>
+
+                Journal
+
+            </li>
+
+            <li onclick="location.href='analytics.html'">
+
+                <i class="fas fa-chart-line"></i>
+
+                Analytics
+
+            </li>
+
+            <li onclick="location.href='ai.html'">
+
+                <i class="fas fa-robot"></i>
+
+                AI Assistant
+
+            </li>
+
+            <li onclick="location.href='profile.html'">
+
+                <i class="fas fa-user-circle"></i>
+
+                Profile
+
+            </li>
+
+            <li onclick="location.href='settings.html'">
+
+                <i class="fas fa-gear"></i>
+
+                Settings
+
+            </li>
+
+        </ul>
+
+        <button id="logoutBtn" class="logout">
+
+            <i class="fas fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </aside>
+
+    <!-- ===========================
+            MAIN CONTENT
+    ============================ -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    📝 Daily Journal
+
+                </h1>
+
+                <p>
+
+                    Record your thoughts, mood and daily reflections.
+
+                </p>
+
+            </div>
+
+            <div class="clock">
+
+                <span id="currentTime"></span>
+
+            </div>
+
+        </header>
+
+        <!-- ===========================
+                MOOD TRACKER
+        ============================ -->
+
+        <section class="journal-section">
+
+            <h2>
+
+                😊 How are you feeling today?
+
+            </h2>
+
+            <div class="mood-grid">
+
+                <button class="mood-btn" data-mood="Happy">
+
+                    😄 Happy
+
+                </button>
+
+                <button class="mood-btn" data-mood="Good">
+
+                    🙂 Good
+
+                </button>
+
+                <button class="mood-btn" data-mood="Normal">
+
+                    😐 Normal
+
+                </button>
+
+                <button class="mood-btn" data-mood="Sad">
+
+                    😔 Sad
+
+                </button>
+
+                <button class="mood-btn" data-mood="Stressed">
+
+                    😫 Stressed
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                DAILY JOURNAL
+        ============================ -->
+
+        <section class="journal-section">
+
+            <h2>
+
+                📖 Today's Journal
+
+            </h2>
+
+            <textarea
+                id="journalText"
+                rows="10"
+                placeholder="Write about your day, your thoughts, achievements, or anything you'd like to remember...">
+            </textarea>
+
+            <br><br>
+
+            <button id="saveJournal">
+
+                Save Journal
+
+            </button>
+
+        </section>
+
+                <!-- ===========================
+                TODAY'S GOALS
+        ============================ -->
+
+        <section class="journal-section">
+
+            <h2>
+
+                🎯 Today's Goals
+
+            </h2>
+
+            <input
+                type="text"
+                id="goalInput"
+                placeholder="Enter today's goal...">
+
+            <button id="addGoal">
+
+                Add Goal
+
+            </button>
+
+            <ul id="goalList">
+
+            </ul>
+
+        </section>
+
+        <!-- ===========================
+                GRATITUDE JOURNAL
+        ============================ -->
+
+        <section class="journal-section">
+
+            <h2>
+
+                🙏 Gratitude Journal
+
+            </h2>
+
+            <p>
+
+                Write three things you are grateful for today.
+
+            </p>
+
+            <textarea
+                id="gratitudeText"
+                rows="5"
+                placeholder="Example:
+1. My family
+2. Learning something new
+3. Good health">
+            </textarea>
+
+            <br><br>
+
+            <button id="saveGratitude">
+
+                Save Gratitude
+
+            </button>
+
+        </section>
+
+        <!-- ===========================
+                DAILY REFLECTION
+        ============================ -->
+
+        <section class="journal-section">
+
+            <h2>
+
+                💡 Daily Reflection
+
+            </h2>
+
+            <label>
+
+                📚 What did you learn today?
+
+            </label>
+
+            <textarea
+                id="learningText"
+                rows="3"
+                placeholder="Write what you learned today...">
+            </textarea>
+
+            <br><br>
+
+            <label>
+
+                🏆 Biggest Achievement
+
+            </label>
+
+            <textarea
+                id="achievementText"
+                rows="3"
+                placeholder="Write your biggest achievement...">
+            </textarea>
+
+            <br><br>
+
+            <label>
+
+                🚀 What can you improve tomorrow?
+
+            </label>
+
+            <textarea
+                id="improvementText"
+                rows="3"
+                placeholder="Write your improvement plan...">
+            </textarea>
+
+            <br><br>
+
+            <button id="saveReflection">
+
+                Save Reflection
+
+            </button>
+
+        </section>
+
+        <!-- ===========================
+                PERSONAL ACHIEVEMENT
+        ============================ -->
+
+        <section class="journal-section">
+
+            <h2>
+
+                ⭐ Today's Achievement
+
+            </h2>
+
+            <div class="achievement-card">
+
+                <i class="fas fa-award"></i>
+
+                <h3 id="achievementTitle">
+
+                    Keep Going!
+
+                </h3>
+
+                <p id="achievementMessage">
+
+                    Every small step today is building your successful future.
+
+                </p>
+
+            </div>
+
+        </section>
+
+                <!-- ===========================
+                JOURNAL HISTORY
+        ============================ -->
+
+        <section class="journal-section">
+
+            <h2>
+
+                📅 Journal History
+
+            </h2>
+
+            <div id="journalHistory">
+
+                <p>
+
+                    No journal entries yet.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                BLOOM AI MOTIVATION
+        ============================ -->
+
+        <section class="journal-section">
+
+            <h2>
+
+                🤖 Bloom AI Motivation
+
+            </h2>
+
+            <div class="motivation-card">
+
+                <i class="fas fa-lightbulb"></i>
+
+                <p id="motivationText">
+
+                    Every day is a new opportunity to become a better version of yourself.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                MOOD STATISTICS
+        ============================ -->
+
+        <section class="journal-section">
+
+            <h2>
+
+                📊 Mood Statistics
+
+            </h2>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <h3>
+
+                        😊 Current Mood
+
+                    </h3>
+
+                    <p id="currentMood">
+
+                        Not Selected
+
+                    </p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h3>
+
+                        📖 Journal Entries
+
+                    </h3>
+
+                    <p id="totalEntries">
+
+                        0
+
+                    </p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h3>
+
+                        🎯 Goals Completed
+
+                    </h3>
+
+                    <p id="completedGoals">
+
+                        0
+
+                    </p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h3>
+
+                        🔥 Journal Streak
+
+                    </h3>
+
+                    <p id="journalStreak">
+
+                        0 Days
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                DAILY SUMMARY
+        ============================ -->
+
+        <section class="journal-section">
+
+            <h2>
+
+                📈 Daily Summary
+
+            </h2>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+
+                    <h3>
+
+                        😊 Mood
+
+                    </h3>
+
+                    <p id="summaryMood">
+
+                        -
+
+                    </p>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <h3>
+
+                        🎯 Goals
+
+                    </h3>
+
+                    <p id="summaryGoals">
+
+                        0
+
+                    </p>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <h3>
+
+                        🙏 Gratitude
+
+                    </h3>
+
+                    <p id="summaryGratitude">
+
+                        Saved
+
+                    </p>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <h3>
+
+                        📖 Journal
+
+                    </h3>
+
+                    <p id="summaryJournal">
+
+                        Saved
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+                <!-- ===========================
+                FOOTER
+        ============================ -->
+
+        <footer class="journal-footer">
+
+            <p>
+
+                🌸 Bloom AI Student Productivity Platform
+
+            </p>
+
+            <p>
+
+                Reflect • Learn • Grow Every Day 🌱
+
+            </p>
+
+            <p>
+
+                Built with HTML, CSS, JavaScript & Python FastAPI
+
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- ===========================
+        JAVASCRIPT FILES
+=========================== -->
+
+<script src="js/storage.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/journal.js"></script>
+
+</body>
+
+</html>

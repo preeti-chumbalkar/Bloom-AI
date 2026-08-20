@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bloom AI | Assistant</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/ai.css">
+
+</head>
+
+<body>
+
+<div class="ai-page">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>🌸 Bloom AI</h2>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+                <i class="fas fa-home"></i>
+                Dashboard
+            </li>
+
+            <li onclick="location.href='study.html'">
+                <i class="fas fa-book"></i>
+                Study
+            </li>
+
+            <li onclick="location.href='fitness.html'">
+                <i class="fas fa-dumbbell"></i>
+                Fitness
+            </li>
+
+            <li onclick="location.href='journal.html'">
+                <i class="fas fa-book-open"></i>
+                Journal
+            </li>
+
+            <li onclick="location.href='analytics.html'">
+                <i class="fas fa-chart-line"></i>
+                Analytics
+            </li>
+
+            <li class="active">
+                <i class="fas fa-robot"></i>
+                AI Assistant
+            </li>
+
+            <li onclick="location.href='settings.html'">
+                <i class="fas fa-cog"></i>
+                Settings
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="ai-content">
+
+        <h1>🤖 Bloom AI Assistant</h1>
+
+        <p>
+            Your personal AI companion for study, coding, fitness, and productivity.
+        </p>
+
+        <!-- Quick Buttons -->
+
+        <div class="quick-buttons">
+
+    <button data-prompt="Explain DSA">📚 Explain DSA</button>
+
+    <button data-prompt="Write Python code for a calculator">💻 Python Code</button>
+
+    <button data-prompt="Create a study plan for exams">📅 Study Plan</button>
+
+    <button data-prompt="Motivate me for studying">🎯 Motivation</button>
+
+    <button data-prompt="Fitness tips for students">💪 Fitness</button>
+
+    <button data-prompt="Practice interview questions">🎤 Interview</button>
+
+    <button id="clearChat">🗑️ Clear Chat</button>
+
+</div>
+
+        <div class="assistant-panel">
+
+            <div class="panel-card">
+
+                <h3>🧪 AI Mock Test Generator</h3>
+
+                <p>Ask for a topic and Bloom AI will create a quick mock quiz.</p>
+
+                <div class="mock-form">
+
+                    <input type="text" id="mockTopic" placeholder="e.g. Python, DSA, AI">
+
+                    <button id="generateMockBtn">Generate Quiz</button>
+
+                </div>
+
+            </div>
+
+            <div class="panel-card">
+
+                <h3>📌 Study Support</h3>
+
+                <p>Use simple prompts like “explain binary search” or “make me a revision note”.</p>
+
+            </div>
+
+        </div>
+
+        <!-- Chat Area -->
+
+        <div class="chat-box" id="chatBox">
+
+            <div class="ai-message">
+
+                👋 Hello! I'm <strong>Bloom AI</strong>.
+
+                <br><br>
+
+                How can I help you today?
+
+            </div>
+
+        </div>
+
+        <!-- Input -->
+
+        <div class="input-area">
+
+            <input
+            type="text"
+            id="userInput"
+            placeholder="Ask me anything...">
+
+            <button id="sendBtn">
+
+                <i class="fas fa-paper-plane"></i>
+
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/ai-utils.js"></script>
+<script src="js/ai.js"></script>
+
+</body>
+
+</html>

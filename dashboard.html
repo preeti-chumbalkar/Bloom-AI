@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bloom AI Dashboard</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ===========================
+            SIDEBAR
+    ============================ -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>🌸 Bloom AI</h2>
+
+            <p>Student Productivity</p>
+
+        </div>
+
+        <!-- User Card -->
+
+        <div class="user-card">
+
+            <div class="avatar">
+
+                <i class="fas fa-user"></i>
+
+            </div>
+
+            <h3 id="userName">
+
+                Student
+
+            </h3>
+
+            <p id="userEmail">
+
+                student@email.com
+
+            </p>
+
+        </div>
+
+        <!-- Navigation -->
+
+        <ul>
+
+            <li class="active">
+
+                <i class="fas fa-house"></i>
+
+                Dashboard
+
+            </li>
+
+            <li onclick="location.href='study.html'">
+
+                <i class="fas fa-book"></i>
+
+                Study Planner
+
+            </li>
+
+            <li onclick="location.href='fitness.html'">
+
+                <i class="fas fa-dumbbell"></i>
+
+                Fitness
+
+            </li>
+
+            <li onclick="location.href='journal.html'">
+
+                <i class="fas fa-book-open"></i>
+
+                Journal
+
+            </li>
+
+            <li onclick="location.href='analytics.html'">
+
+                <i class="fas fa-chart-line"></i>
+
+                Analytics
+
+            </li>
+
+            <li onclick="location.href='ai.html'">
+
+                <i class="fas fa-robot"></i>
+
+                AI Assistant
+
+            </li>
+
+            <li onclick="location.href='profile.html'">
+
+                <i class="fas fa-user-circle"></i>
+
+                Profile
+
+            </li>
+
+            <li onclick="location.href='settings.html'">
+
+                <i class="fas fa-gear"></i>
+
+                Settings
+
+            </li>
+
+        </ul>
+
+        <!-- Bloom Score -->
+
+        <div class="bloom-score">
+
+            <h4>🌱 Bloom Score</h4>
+
+            <div class="score" id="sidebarScore">
+
+                85%
+
+            </div>
+
+        </div>
+
+        <button id="logoutBtn" class="logout">
+
+            <i class="fas fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </aside>
+
+    <!-- ===========================
+            MAIN CONTENT
+    ============================ -->
+
+    <main class="main-content">
+
+
+        <!-- ===========================
+                TOP BAR
+        ============================ -->
+
+        <header class="topbar">
+
+            <div class="welcome">
+
+                <h1>
+
+                    Good Morning,
+
+                    <span id="username">
+
+                        Student
+
+                    </span>
+
+                    🌸
+
+                </h1>
+
+                <p id="currentDate">
+
+                    Monday, 20 July 2026
+
+                </p>
+
+            </div>
+
+            <div class="top-right">
+
+                <button class="notification-btn">
+
+                    <i class="fas fa-bell"></i>
+
+                    <span class="notification-count">3</span>
+
+                </button>
+
+                <div class="clock">
+
+                    <i class="fas fa-clock"></i>
+
+                    <span id="currentTime"></span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ===========================
+                DASHBOARD CARDS
+        ============================ -->
+
+        <section class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+
+                    🌱
+
+                </div>
+
+                <div>
+
+                    <h3>Bloom Score</h3>
+
+                    <h2 id="bloomScore">
+
+                        85%
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">
+
+                    📚
+
+                </div>
+
+                <div>
+
+                    <h3>Study Progress</h3>
+
+                    <h2 id="studyProgress">
+
+                        12 / 18
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">
+
+                    💧
+
+                </div>
+
+                <div>
+
+                    <h3>Water Intake</h3>
+
+                    <h2 id="waterProgress">
+
+                        6 / 8
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">
+
+                    🔥
+
+                </div>
+
+                <div>
+
+                    <h3>Study Streak</h3>
+
+                    <h2 id="studyStreak">
+
+                        15 Days
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">
+
+                    😊
+
+                </div>
+
+                <div>
+
+                    <h3>Mood</h3>
+
+                    <h2 id="moodStatus">
+
+                        Happy
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-icon">
+
+                    📝
+
+                </div>
+
+                <div>
+
+                    <h3>Journal Entries</h3>
+
+                    <h2 id="journalCount">
+
+                        21
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                TODAY'S TASKS
+        ============================ -->
+
+        <section class="tasks">
+
+            <div class="section-header">
+
+                <h2>
+
+                    📋 Today's Tasks
+
+                </h2>
+
+            </div>
+
+            <ul id="todayTasks">
+
+                <li>Loading tasks...</li>
+
+            </ul>
+
+        </section>
+
+
+
+                <!-- ===========================
+                RECENT ACTIVITY
+        ============================ -->
+
+        <section class="tasks">
+
+            <div class="section-header">
+
+                <h2>📈 Recent Activity</h2>
+
+            </div>
+
+            <ul id="recentActivity">
+
+                <li>🌸 Welcome to Bloom AI!</li>
+
+            </ul>
+
+        </section>
+
+        <!-- ===========================
+                QUOTE OF THE DAY
+        ============================ -->
+
+        <section class="quote-section">
+
+            <div class="quote-card">
+
+                <h2>🌟 Quote of the Day</h2>
+
+                <p id="dailyQuote">
+
+                    Success is the sum of small efforts repeated every day.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                QUICK ACTIONS
+        ============================ -->
+
+        <section class="quick-actions">
+
+            <div class="section-header">
+
+                <h2>⚡ Quick Actions</h2>
+
+            </div>
+
+            <div class="action-grid">
+
+                <div class="action-card"
+                     onclick="location.href='study.html'">
+
+                    <i class="fas fa-book"></i>
+
+                    <h3>Study Planner</h3>
+
+                    <p>
+
+                        Manage subjects, units and study tasks.
+
+                    </p>
+
+                </div>
+
+                <div class="action-card"
+                     onclick="location.href='fitness.html'">
+
+                    <i class="fas fa-dumbbell"></i>
+
+                    <h3>Fitness</h3>
+
+                    <p>
+
+                        Track water, exercise and health.
+
+                    </p>
+
+                </div>
+
+                <div class="action-card"
+                     onclick="location.href='journal.html'">
+
+                    <i class="fas fa-book-open"></i>
+
+                    <h3>Journal</h3>
+
+                    <p>
+
+                        Write your daily journal and notes.
+
+                    </p>
+
+                </div>
+
+                <div class="action-card"
+                     onclick="location.href='analytics.html'">
+
+                    <i class="fas fa-chart-line"></i>
+
+                    <h3>Analytics</h3>
+
+                    <p>
+
+                        View study and fitness reports.
+
+                    </p>
+
+                </div>
+
+                <div class="action-card"
+                     onclick="location.href='ai.html'">
+
+                    <i class="fas fa-robot"></i>
+
+                    <h3>AI Assistant</h3>
+
+                    <p>
+
+                        Ask Bloom AI for study guidance.
+
+                    </p>
+
+                </div>
+
+                <div class="action-card"
+                     onclick="location.href='profile.html'">
+
+                    <i class="fas fa-user-circle"></i>
+
+                    <h3>Profile</h3>
+
+                    <p>
+
+                        View and update your profile.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                WEEKLY PROGRESS
+        ============================ -->
+
+        <section class="summary-section">
+
+            <div class="section-header">
+
+                <h2>📊 Weekly Progress</h2>
+
+            </div>
+
+            <div class="summary-card">
+
+                <p>📚 Study Progress</p>
+
+                <progress value="70" max="100"></progress>
+
+                <p>💧 Water Intake</p>
+
+                <progress value="75" max="100"></progress>
+
+                <p>🏃 Fitness</p>
+
+                <progress value="60" max="100"></progress>
+
+                <p>😴 Sleep</p>
+
+                <progress value="80" max="100"></progress>
+
+            </div>
+
+        </section>
+
+                <!-- ===========================
+                DAILY GOALS
+        ============================ -->
+
+        <section class="summary-section">
+
+            <div class="section-header">
+
+                <h2>🎯 Today's Goals</h2>
+
+            </div>
+
+            <div class="summary-card">
+
+                <p>📚 Study for 3 Hours</p>
+
+                <progress value="40" max="100"></progress>
+
+                <br><br>
+
+                <p>💧 Drink 8 Glasses of Water</p>
+
+                <progress value="75" max="100"></progress>
+
+                <br><br>
+
+                <p>🏃 Exercise for 30 Minutes</p>
+
+                <progress value="50" max="100"></progress>
+
+                <br><br>
+
+                <p>😴 Sleep for 8 Hours</p>
+
+                <progress value="90" max="100"></progress>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                AI SUGGESTIONS
+        ============================ -->
+
+        <section class="quote-section">
+
+            <div class="quote-card">
+
+                <h2>🤖 Bloom AI Suggestion</h2>
+
+                <p id="aiSuggestion">
+
+                    🌸 You completed most of your study goals yesterday.
+                    Try studying 30 more minutes today to improve your Bloom Score!
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                MINI CALENDAR
+        ============================ -->
+
+        <section class="summary-section">
+
+            <div class="section-header">
+
+                <h2>📅 Calendar</h2>
+
+            </div>
+
+            <div class="summary-card">
+
+                <input
+                    type="date"
+                    id="calendarDate"
+                    style="
+                        width:100%;
+                        padding:15px;
+                        border:none;
+                        border-radius:12px;
+                        font-size:16px;
+                    ">
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                FOOTER
+        ============================ -->
+
+        <footer class="dashboard-footer">
+
+            <p>
+
+                🌸 Bloom AI Student Productivity Platform
+
+            </p>
+
+            <p>
+
+                Made with ❤️ using HTML, CSS, JavaScript & Python FastAPI
+
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- JavaScript -->
+
+<script src="js/storage.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+
+</html>

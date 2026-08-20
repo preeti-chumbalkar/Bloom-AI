@@ -1,0 +1,269 @@
+/* ==========================================
+   BLOOM AI DASHBOARD
+   GLOBAL CSS
+   ========================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ==========================================
+   ROOT COLORS
+========================================== */
+
+:root{
+
+    --primary:#f8a8d8;
+    --secondary:#b8d5ff;
+    --accent:#7dd3fc;
+
+    --white:#ffffff;
+
+    --background:#faf5ff;
+
+    --card:#ffffff;
+
+    --text:#2c2c3a;
+
+    --light-text:#6f6f88;
+
+    --border:#e9d8ff;
+
+    --shadow:0 16px 40px rgba(92,76,175,.08);
+
+    --radius:20px;
+
+    --transition:.35s ease;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    line-height:1.6;
+
+    transition:background .3s ease, color .3s ease;
+
+}
+
+body.dark-mode {
+    --background:#0f172a;
+    --card:#111827;
+    --text:#f8fafc;
+    --light-text:#cbd5e1;
+    --border:#334155;
+    --shadow:0 16px 40px rgba(2, 8, 23, 0.4);
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* ==========================================
+   IMAGES
+========================================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.primary-btn{
+
+    display:inline-block;
+
+    padding:15px 34px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow);
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.secondary-btn{
+
+    display:inline-block;
+
+    padding:15px 34px;
+
+    border-radius:50px;
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    transition:var(--transition);
+
+}
+
+.secondary-btn:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* ==========================================
+   SECTION
+========================================== */
+
+section{
+
+    width:100%;
+
+    padding:90px 8%;
+
+}
+
+/* ==========================================
+   TITLES
+========================================== */
+
+h1{
+
+    font-size:58px;
+
+    line-height:1.2;
+
+}
+
+h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+}
+
+h3{
+
+    font-size:24px;
+
+}
+
+p{
+
+    color:var(--light-text);
+
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.card{
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ==========================================
+   GLASS EFFECT
+========================================== */
+
+.glass-card{
+
+    background:rgba(255,255,255,.55);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.6);
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:white;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+/* ==========================================
+   SMOOTH SCROLL
+========================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}

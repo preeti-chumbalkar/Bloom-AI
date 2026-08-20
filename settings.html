@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bloom AI | Settings</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/settings.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ===========================
+            SIDEBAR
+    ============================ -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>🌸 Bloom AI</h2>
+
+            <p>Student Productivity</p>
+
+        </div>
+
+        <div class="user-card">
+
+            <div class="avatar">
+
+                <i class="fas fa-user"></i>
+
+            </div>
+
+            <h3 id="userName">
+
+                Student
+
+            </h3>
+
+            <p id="userEmail">
+
+                student@email.com
+
+            </p>
+
+        </div>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+                <i class="fas fa-house"></i>
+                Dashboard
+            </li>
+
+            <li onclick="location.href='study.html'">
+                <i class="fas fa-book"></i>
+                Study
+            </li>
+
+            <li onclick="location.href='fitness.html'">
+                <i class="fas fa-dumbbell"></i>
+                Fitness
+            </li>
+
+            <li onclick="location.href='journal.html'">
+                <i class="fas fa-book-open"></i>
+                Journal
+            </li>
+
+            <li onclick="location.href='analytics.html'">
+                <i class="fas fa-chart-line"></i>
+                Analytics
+            </li>
+
+            <li onclick="location.href='profile.html'">
+                <i class="fas fa-user"></i>
+                Profile
+            </li>
+
+            <li class="active">
+                <i class="fas fa-gear"></i>
+                Settings
+            </li>
+
+        </ul>
+
+        <button id="logoutBtn" class="logout">
+
+            <i class="fas fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </aside>
+
+    <!-- ===========================
+            MAIN CONTENT
+    ============================ -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    ⚙️ Settings
+
+                </h1>
+
+                <p>
+
+                    Customize your Bloom AI experience.
+
+                </p>
+
+            </div>
+
+            <div class="clock">
+
+                <span id="currentTime"></span>
+
+            </div>
+
+        </header>
+
+        <!-- ===========================
+                APPEARANCE
+        ============================ -->
+
+        <section class="settings-section">
+
+            <h2>
+
+                🎨 Appearance
+
+            </h2>
+
+            <div class="setting-card">
+
+                <label>
+
+                    Theme
+
+                </label>
+
+                <select id="theme">
+
+                    <option value="light">
+
+                        🌞 Light
+
+                    </option>
+
+                    <option value="dark">
+
+                        🌙 Dark
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="setting-card">
+
+                <label>
+
+                    Accent Color
+
+                </label>
+
+                <select id="accentColor">
+
+                    <option value="pink">Pink</option>
+
+                    <option value="purple">Purple</option>
+
+                    <option value="blue">Blue</option>
+
+                    <option value="green">Green</option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+                <!-- ===========================
+                NOTIFICATIONS
+        ============================ -->
+
+        <section class="settings-section">
+
+            <h2>
+
+                🔔 Notifications
+
+            </h2>
+
+            <div class="setting-card">
+
+                <label>
+
+                    Daily Study Reminder
+
+                </label>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="studyReminder">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+            <div class="setting-card">
+
+                <label>
+
+                    Fitness Reminder
+
+                </label>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="fitnessReminder">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+            <div class="setting-card">
+
+                <label>
+
+                    Journal Reminder
+
+                </label>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="journalReminder">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                LANGUAGE
+        ============================ -->
+
+        <section class="settings-section">
+
+            <h2>
+
+                🌍 Language
+
+            </h2>
+
+            <div class="setting-card">
+
+                <label>
+
+                    Select Language
+
+                </label>
+
+                <select id="language">
+
+                    <option value="english">
+
+                        English
+
+                    </option>
+
+                    <option value="hindi">
+
+                        Hindi
+
+                    </option>
+
+                    <option value="marathi">
+
+                        Marathi
+
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                PRIVACY
+        ============================ -->
+
+        <section class="settings-section">
+
+            <h2>
+
+                🔒 Privacy & Security
+
+            </h2>
+
+            <div class="setting-card">
+
+                <label>
+
+                    Auto Login
+
+                </label>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="autoLogin">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+            <div class="setting-card">
+
+                <label>
+
+                    Remember Me
+
+                </label>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="rememberMe">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                REMINDERS
+        ============================ -->
+
+        <section class="settings-section">
+
+            <h2>
+
+                📅 Daily Reminder Time
+
+            </h2>
+
+            <div class="setting-card">
+
+                <label>
+
+                    Reminder Time
+
+                </label>
+
+                <input
+                    type="time"
+                    id="reminderTime">
+
+            </div>
+
+        </section>
+
+                <!-- ===========================
+                BACKUP & RESTORE
+        ============================ -->
+
+        <section class="settings-section">
+
+            <h2>
+
+                💾 Backup & Restore
+
+            </h2>
+
+            <div class="setting-card">
+
+                <label>
+
+                    Export Your Bloom AI Data
+
+                </label>
+
+                <button id="exportData">
+
+                    📤 Export Data
+
+                </button>
+
+            </div>
+
+            <div class="setting-card">
+
+                <label>
+
+                    Import Backup File
+
+                </label>
+
+                <input
+                    type="file"
+                    id="importFile"
+                    accept=".json">
+
+                <button id="importData">
+
+                    📥 Import Data
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                DATA MANAGEMENT
+        ============================ -->
+
+        <section class="settings-section">
+
+            <h2>
+
+                🗑️ Data Management
+
+            </h2>
+
+            <div class="setting-card danger">
+
+                <label>
+
+                    Clear All Bloom AI Data
+
+                </label>
+
+                <p>
+
+                    This will permanently remove all saved study,
+                    fitness, journal, analytics and profile data.
+
+                </p>
+
+                <button id="clearData">
+
+                    🗑️ Clear All Data
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                ABOUT BLOOM AI
+        ============================ -->
+
+        <section class="settings-section">
+
+            <h2>
+
+                ℹ️ About Bloom AI
+
+            </h2>
+
+            <div class="setting-card">
+
+                <h3>
+
+                    🌸 Bloom AI Student Productivity Platform
+
+                </h3>
+
+                <p>
+
+                    Version 1.0.0
+
+                </p>
+
+                <p>
+
+                    Bloom AI helps students manage study,
+                    fitness, journals and productivity
+                    in one intelligent platform.
+
+                </p>
+
+                <div class="about-grid">
+
+                    <div>
+
+                        <strong>Frontend</strong>
+
+                        <p>
+
+                            HTML5, CSS3, JavaScript
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Backend</strong>
+
+                        <p>
+
+                            Python FastAPI
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <strong>Database</strong>
+
+                        <p>
+
+                            SQLite
+
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <strong>AI Support</strong>
+
+                        <p>
+
+                            Gemini / OpenAI API
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                APP INFORMATION
+        ============================ -->
+
+        <section class="settings-section">
+
+            <h2>
+
+                📊 App Information
+
+            </h2>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <h3 id="storageUsed">
+
+                        0 KB
+
+                    </h3>
+
+                    <p>
+
+                        Local Storage Used
+
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h3 id="lastBackup">
+
+                        Never
+
+                    </h3>
+
+                    <p>
+
+                        Last Backup
+
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h3>
+
+                        v1.0.0
+
+                    </h3>
+
+                    <p>
+
+                        Application Version
+
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h3 id="totalModules">
+
+                        9
+
+                    </h3>
+
+                    <p>
+
+                        Completed Modules
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+                <!-- ===========================
+                FOOTER
+        ============================ -->
+
+        <footer class="settings-footer">
+
+            <p>
+
+                🌸 Bloom AI Student Productivity Platform
+
+            </p>
+
+            <p>
+
+                Learn • Grow • Achieve Every Day 🚀
+
+            </p>
+
+            <p>
+
+                Developed with HTML, CSS, JavaScript, Python FastAPI & SQLite
+
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- ===========================
+        JAVASCRIPT FILES
+=========================== -->
+
+<script src="js/storage.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/settings.js"></script>
+
+</body>
+
+</html>

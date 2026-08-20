@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bloom AI - Fitness</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/fitness.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ===========================
+            SIDEBAR
+    ============================ -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>🌸 Bloom AI</h2>
+
+            <p>Student Productivity</p>
+
+        </div>
+
+        <div class="user-card">
+
+            <div class="avatar">
+
+                <i class="fas fa-user"></i>
+
+            </div>
+
+            <h3 id="userName">
+
+                Student
+
+            </h3>
+
+            <p id="userEmail">
+
+                student@email.com
+
+            </p>
+
+        </div>
+
+        <ul>
+
+            <li onclick="location.href='dashboard.html'">
+
+                <i class="fas fa-house"></i>
+
+                Dashboard
+
+            </li>
+
+            <li onclick="location.href='study.html'">
+
+                <i class="fas fa-book"></i>
+
+                Study Planner
+
+            </li>
+
+            <li class="active">
+
+                <i class="fas fa-dumbbell"></i>
+
+                Fitness
+
+            </li>
+
+            <li onclick="location.href='journal.html'">
+
+                <i class="fas fa-book-open"></i>
+
+                Journal
+
+            </li>
+
+            <li onclick="location.href='analytics.html'">
+
+                <i class="fas fa-chart-line"></i>
+
+                Analytics
+
+            </li>
+
+            <li onclick="location.href='ai.html'">
+
+                <i class="fas fa-robot"></i>
+
+                AI Assistant
+
+            </li>
+
+            <li onclick="location.href='profile.html'">
+
+                <i class="fas fa-user-circle"></i>
+
+                Profile
+
+            </li>
+
+            <li onclick="location.href='settings.html'">
+
+                <i class="fas fa-gear"></i>
+
+                Settings
+
+            </li>
+
+        </ul>
+
+        <button id="logoutBtn" class="logout">
+
+            <i class="fas fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </aside>
+
+    <!-- ===========================
+            MAIN CONTENT
+    ============================ -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    💪 Fitness Tracker
+
+                </h1>
+
+                <p>
+
+                    Track your health and build better habits.
+
+                </p>
+
+            </div>
+
+            <div class="clock">
+
+                <span id="currentTime"></span>
+
+            </div>
+
+        </header>
+
+        <!-- ===========================
+                FITNESS CARDS
+        ============================ -->
+
+        <section class="cards">
+
+            <!-- Water -->
+
+            <div class="card">
+
+                <h3>💧 Water Intake</h3>
+
+                <h2 id="waterCount">
+
+                    0 / 8
+
+                </h2>
+
+                <button id="addWater">
+
+                    + Add Glass
+
+                </button>
+
+            </div>
+
+            <!-- Exercise -->
+
+            <div class="card">
+
+                <h3>🏃 Exercise</h3>
+
+                <h2 id="exerciseMinutes">
+
+                    0 Min
+
+                </h2>
+
+                <button id="addExercise">
+
+                    + Add 10 Min
+
+                </button>
+
+            </div>
+
+            <!-- Sleep -->
+
+            <div class="card">
+
+                <h3>😴 Sleep</h3>
+
+                <h2 id="sleepHours">
+
+                    0 Hours
+
+                </h2>
+
+                <button id="addSleep">
+
+                    + Add Hour
+
+                </button>
+
+            </div>
+
+        </section>
+
+                <!-- ===========================
+                CALORIES CARD
+        ============================ -->
+
+        <section class="fitness-section">
+
+            <div class="fitness-card">
+
+                <h2>
+
+                    🔥 Calories Burned
+
+                </h2>
+
+                <div class="fitness-value">
+
+                    <span id="caloriesBurned">
+
+                        0
+
+                    </span>
+
+                    <p>Calories Today</p>
+
+                </div>
+
+                <button id="addCalories">
+
+                    + Burn 50 Calories
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                WEEKLY PROGRESS
+        ============================ -->
+
+        <section class="fitness-section">
+
+            <h2>
+
+                📊 Weekly Progress
+
+            </h2>
+
+            <div class="progress-card">
+
+                <p>💧 Water Intake</p>
+
+                <progress id="waterProgress"
+                          value="0"
+                          max="8">
+                </progress>
+
+                <p>🏃 Exercise</p>
+
+                <progress id="exerciseProgress"
+                          value="0"
+                          max="60">
+                </progress>
+
+                <p>😴 Sleep</p>
+
+                <progress id="sleepProgress"
+                          value="0"
+                          max="8">
+                </progress>
+
+                <p>🔥 Calories Goal</p>
+
+                <progress id="calorieProgress"
+                          value="0"
+                          max="500">
+                </progress>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                TODAY'S GOALS
+        ============================ -->
+
+        <section class="fitness-section">
+
+            <h2>
+
+                🎯 Today's Goals
+
+            </h2>
+
+            <div class="goal-list">
+
+                <div class="goal-item">
+
+                    <input
+                        type="checkbox"
+                        id="goalWater">
+
+                    <label for="goalWater">
+
+                        Drink 8 Glasses of Water
+
+                    </label>
+
+                </div>
+
+                <div class="goal-item">
+
+                    <input
+                        type="checkbox"
+                        id="goalExercise">
+
+                    <label for="goalExercise">
+
+                        Exercise for 30 Minutes
+
+                    </label>
+
+                </div>
+
+                <div class="goal-item">
+
+                    <input
+                        type="checkbox"
+                        id="goalSleep">
+
+                    <label for="goalSleep">
+
+                        Sleep for 8 Hours
+
+                    </label>
+
+                </div>
+
+                <div class="goal-item">
+
+                    <input
+                        type="checkbox"
+                        id="goalCalories">
+
+                    <label for="goalCalories">
+
+                        Burn 500 Calories
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                FITNESS NOTES
+        ============================ -->
+
+        <section class="fitness-section">
+
+            <h2>
+
+                📝 Fitness Notes
+
+            </h2>
+
+            <textarea
+                id="fitnessNotes"
+                placeholder="Write your workout notes here..."
+                rows="6">
+
+            </textarea>
+
+            <br><br>
+
+            <button id="saveNotes">
+
+                Save Notes
+
+            </button>
+
+        </section>
+
+                <!-- ===========================
+                ACHIEVEMENT BADGES
+        ============================ -->
+
+        <section class="fitness-section">
+
+            <h2>
+
+                🏆 Achievement Badges
+
+            </h2>
+
+            <div class="badge-grid">
+
+                <div class="badge-card">
+
+                    <div class="badge-icon">
+
+                        💧
+
+                    </div>
+
+                    <h3>
+
+                        Hydration Hero
+
+                    </h3>
+
+                    <p>
+
+                        Drink 8 glasses of water.
+
+                    </p>
+
+                </div>
+
+                <div class="badge-card">
+
+                    <div class="badge-icon">
+
+                        🏃
+
+                    </div>
+
+                    <h3>
+
+                        Fitness Starter
+
+                    </h3>
+
+                    <p>
+
+                        Exercise for 30 minutes.
+
+                    </p>
+
+                </div>
+
+                <div class="badge-card">
+
+                    <div class="badge-icon">
+
+                        🔥
+
+                    </div>
+
+                    <h3>
+
+                        Calorie Burner
+
+                    </h3>
+
+                    <p>
+
+                        Burn 500 calories.
+
+                    </p>
+
+                </div>
+
+                <div class="badge-card">
+
+                    <div class="badge-icon">
+
+                        😴
+
+                    </div>
+
+                    <h3>
+
+                        Sleep Master
+
+                    </h3>
+
+                    <p>
+
+                        Complete 8 hours of sleep.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                AI FITNESS TIPS
+        ============================ -->
+
+        <section class="fitness-section">
+
+            <h2>
+
+                🤖 Bloom AI Fitness Tips
+
+            </h2>
+
+            <div class="fitness-tip">
+
+                <p id="fitnessTip">
+
+                    Stay hydrated, stretch before every workout,
+                    and be consistent. Small daily habits lead to
+                    big results.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+                WORKOUT HISTORY
+        ============================ -->
+
+        <section class="fitness-section">
+
+            <h2>
+
+                📅 Workout History
+
+            </h2>
+
+            <ul id="workoutHistory">
+
+                <li>
+
+                    No workouts recorded yet.
+
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- ===========================
+                DAILY SUMMARY
+        ============================ -->
+
+        <section class="fitness-section">
+
+            <h2>
+
+                📈 Daily Summary
+
+            </h2>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+
+                    <h3>
+
+                        💧 Water
+
+                    </h3>
+
+                    <p id="summaryWater">
+
+                        0 / 8 Glasses
+
+                    </p>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <h3>
+
+                        🏃 Exercise
+
+                    </h3>
+
+                    <p id="summaryExercise">
+
+                        0 Minutes
+
+                    </p>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <h3>
+
+                        😴 Sleep
+
+                    </h3>
+
+                    <p id="summarySleep">
+
+                        0 Hours
+
+                    </p>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <h3>
+
+                        🔥 Calories
+
+                    </h3>
+
+                    <p id="summaryCalories">
+
+                        0 kcal
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+                <!-- ===========================
+                FOOTER
+        ============================ -->
+
+        <footer class="fitness-footer">
+
+            <p>
+
+                🌸 Bloom AI Student Productivity Platform
+
+            </p>
+
+            <p>
+
+                Stay Healthy • Stay Focused • Keep Growing 💪
+
+            </p>
+
+            <p>
+
+                Built with HTML, CSS, JavaScript & Python FastAPI
+
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- ===========================
+        JAVASCRIPT FILES
+=========================== -->
+
+<script src="js/storage.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/fitness.js"></script>
+
+</body>
+
+</html>
